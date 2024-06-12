@@ -1,0 +1,5 @@
+﻿  main.cpp
+  vec2.cpp
+  Generating Code...
+C:\dev\math\src\vec\vec2.cpp(38,1): warning C4172: returning address of local variable or temporary
+  math.vcxproj -> C:\dev\math\x64\Debug\math.exe
