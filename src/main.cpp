@@ -1,11 +1,13 @@
+#include <cassert>
 #include "vec/vec2.cpp"
+#include "vec/vec3.cpp"
 
 template<typename T>
-void print(const std::string& name, const vec2<T>& vector) {
+static void print(const std::string& name, const vec2<T>& vector) {
 	std::cout << name << " = " << vector << std::endl;
 }
 
-void test1() {
+static void test1() {
 	// (OK) Default constructor
 	vec2<int> v1(1, 2);
 
@@ -38,7 +40,7 @@ void test1() {
 	print("v3", v3);
 }
 
-void testAdd() {
+static void testAdd() {
 	vec2<float> v1(1, 1);
 	vec2<float> v2(2, 2);
 	vec2<float> v3(3, 3);
@@ -54,8 +56,16 @@ void testAdd() {
 	print("v5", v5);
 }
 
+static void testCross() {
+	vec3<float> a(1, 4, 6);
+	vec3<float> b(5, 3, 2);
+	vec3<float> cross = a.cross(b);
+
+	assert((cross == vec3<float>(-10, 28, -17)) && "The result of a.cross(b) is invalid");
+}
+
 int main() {
-	testAdd();
+	testCross();
 
 	std::cin.get();
 }

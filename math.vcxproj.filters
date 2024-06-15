@@ -24,9 +24,15 @@
     <ClCompile Include="src\vec\vec2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\vec\vec3.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\vec\vec2.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vec\vec3.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

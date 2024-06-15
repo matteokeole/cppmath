@@ -131,10 +131,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\vec\vec3.cpp" />
     <ClCompile Include="src\vec\vec2.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\vec\vec2.hpp" />
+    <ClInclude Include="src\vec\vec3.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
