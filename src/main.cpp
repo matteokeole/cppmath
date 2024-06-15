@@ -38,12 +38,12 @@ void test1() {
 	print("v3", v3);
 }
 
-void test2() {
-	vec2<int> v1(1, 1);
-	vec2<int> v2(2, 2);
-	vec2<int> v3(3, 3);
-	vec2<int> v4(4, 4);
-	vec2<int> v5(0, 0);
+void testAdd() {
+	vec2<float> v1(1, 1);
+	vec2<float> v2(2, 2);
+	vec2<float> v3(3, 3);
+	vec2<float> v4(4, 4);
+	vec2<float> v5(0, 0);
 
 	v5 = v1 + v4;
 
@@ -55,7 +55,7 @@ void test2() {
 }
 
 int main() {
-	test2();
+	testAdd();
 
 	std::cin.get();
 }

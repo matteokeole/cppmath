@@ -18,25 +18,27 @@ struct vec2 {
 
 	vec2&& operator +(const vec2&) &&;
 
-	bool operator ==(T) const;
-
-	bool operator ==(const vec2&) const;
-
-	vec2& operator +=(T);
-
 	vec2& operator +=(const vec2&);
 
-	vec2& operator -=(T);
+	vec2&& operator -(const vec2&) const &;
+
+	vec2&& operator -(const vec2&) &&;
 
 	vec2& operator -=(const vec2&);
 
-	vec2& operator *=(T);
+	vec2&& operator *(const vec2&) const &;
+
+	vec2&& operator *(const vec2&) &&;
 
 	vec2& operator *=(const vec2&);
 
-	vec2& operator /=(T);
+	vec2&& operator /(const vec2&) const &;
+
+	vec2&& operator /(const vec2&) &&;
 
 	vec2& operator /=(const vec2&);
+
+	bool operator ==(const vec2&) const;
 
 	vec2& normalize();
 

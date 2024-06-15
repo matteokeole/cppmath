@@ -1,5 +1,7 @@
 .vs
 bin
 obj
+math
+x64
 
 *.user
