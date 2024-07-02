@@ -1,5 +1,6 @@
 #include <cassert>
 #include "mat/mat3x3.cpp"
+#include "mat/mat4x4.cpp"
 #include "vec/vec2.cpp"
 #include "vec/vec3.cpp"
 #include "vec/vec4.cpp"
@@ -79,16 +80,16 @@ static void testMat3x3() {
 	mat3x3<float> mat;
 
 	std::cout << mat << std::endl;
+}
 
-	//std::cout << mat[0] << std::endl;
+static void testMat4x4() {
+	mat4x4<float> mat;
 
-	//mat[5] = 2;
-
-	//std::cout << mat[0] << std::endl;
+	std::cout << mat << std::endl;
 }
 
 int main() {
-	testMat3x3();
+	testMat4x4();
 
 	std::cin.get();
 }

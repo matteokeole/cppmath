@@ -4,7 +4,7 @@
 
 template<typename T>
 struct mat3x3 {
-	public:
+	protected:
 		T entries[9];
 
 	public:

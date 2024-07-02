@@ -1,5 +1,4 @@
 #include "mat3x3.hpp"
-#include <utility>
 
 template<typename T>
 mat3x3<T>::mat3x3() : entries() {}
