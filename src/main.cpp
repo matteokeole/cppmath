@@ -1,4 +1,5 @@
 #include <cassert>
+#include "mat/mat3x3.cpp"
 #include "vec/vec2.cpp"
 #include "vec/vec3.cpp"
 #include "vec/vec4.cpp"
@@ -74,9 +75,20 @@ static void testVec4Dot() {
 	assert((dot == 70) && "The result of vec4.dot(vec4) is invalid");
 }
 
+static void testMat3x3() {
+	mat3x3<float> mat;
+
+	std::cout << mat << std::endl;
+
+	//std::cout << mat[0] << std::endl;
+
+	//mat[5] = 2;
+
+	//std::cout << mat[0] << std::endl;
+}
+
 int main() {
-	testVec3Cross();
-	testVec4Dot();
+	testMat3x3();
 
 	std::cin.get();
 }
