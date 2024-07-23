@@ -40,7 +40,9 @@ struct vec3 {
 
 	bool operator ==(const vec3&) const;
 
-	vec3 cross(const vec3&) const;
+	vec3&& cross(const vec3&) const &;
+
+	vec3&& cross(const vec3&) &&;
 
 	vec3& normalize();
 

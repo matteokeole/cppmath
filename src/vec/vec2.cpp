@@ -1,18 +1,26 @@
 #include "vec2.hpp"
 
 template<typename T>
-vec2<T>::vec2(T x, T y) : x(x), y(y) {}
+vec2<T>::vec2(T x, T y) : x(x), y(y) {
+	std::cout << "Def: " << (*this) << std::endl;
+}
 
 template<typename T>
-vec2<T>::vec2(const vec2& v) : x(v.x), y(v.y) {}
+vec2<T>::vec2(const vec2& v) : x(v.x), y(v.y) {
+	std::cout << "Copy: " << (*this) << std::endl;
+}
 
 template<typename T>
-vec2<T>::vec2(const vec2&& v) : x(v.x), y(v.y) {}
+vec2<T>::vec2(const vec2&& v) : x(v.x), y(v.y) {
+	std::cout << "Move: " << (*this) << std::endl;
+}
 
 template<typename T>
 vec2<T>& vec2<T>::operator =(const vec2& v) {
 	x = v.x;
 	y = v.y;
+
+	std::cout << "Assign: " << (*this) << std::endl;
 
 	return *this;
 }

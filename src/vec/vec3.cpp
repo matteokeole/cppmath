@@ -1,19 +1,27 @@
 #include "vec3.hpp"
 
 template<typename T>
-vec3<T>::vec3(T x, T y, T z) : x(x), y(y), z(z) {}
+vec3<T>::vec3(T x, T y, T z) : x(x), y(y), z(z) {
+	std::cout << "Def: " << (*this) << std::endl;
+}
 
 template<typename T>
-vec3<T>::vec3(const vec3& v) : x(v.x), y(v.y), z(v.z) {}
+vec3<T>::vec3(const vec3& v) : x(v.x), y(v.y), z(v.z) {
+	std::cout << "Copy: " << (*this) << std::endl;
+}
 
 template<typename T>
-vec3<T>::vec3(const vec3&& v) : x(v.x), y(v.y), z(v.z) {}
+vec3<T>::vec3(const vec3&& v) : x(v.x), y(v.y), z(v.z) {
+	std::cout << "Move: " << (*this) << std::endl;
+}
 
 template<typename T>
 vec3<T>& vec3<T>::operator =(const vec3& v) {
 	x = v.x;
 	y = v.y;
 	z = v.z;
+
+	std::cout << "Assign: " << (*this) << std::endl;
 
 	return *this;
 }
@@ -116,12 +124,25 @@ bool vec3<T>::operator ==(const vec3& v) const {
 }
 
 template<typename T>
-vec3<T> vec3<T>::cross(const vec3& v) const {
-	return vec3(
+vec3<T>&& vec3<T>::cross(const vec3& v) const & {
+	return std::move(vec3(
 		y * v.z - z * v.y,
 		z * v.x - x * v.z,
 		x * v.y - y * v.x
-	);
+	));
+}
+
+template<typename T>
+vec3<T>&& vec3<T>::cross(const vec3& v) && {
+	T _x = y * v.z - z * v.y;
+	T _y = z * v.x - x * v.z;
+	T _z = x * v.y - y * v.x;
+
+	x = _x;
+	y = _y;
+	z = _z;
+
+	return std::move(*this);
 }
 
 template<typename T>
