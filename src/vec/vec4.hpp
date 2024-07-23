@@ -20,6 +20,10 @@ struct vec4 {
 
 	vec4& operator +=(const vec4&);
 
+	vec4&& operator -() const &;
+
+	vec4&& operator -() &&;
+
 	vec4&& operator -(const vec4&) const &;
 
 	vec4&& operator -(const vec4&) &&;

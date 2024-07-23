@@ -53,6 +53,21 @@ vec4<T>& vec4<T>::operator +=(const vec4& v) {
 }
 
 template<typename T>
+vec4<T>&& vec4<T>::operator -() const & {
+	return std::move(vec4(-x, -y, -z, -w));
+}
+
+template<typename T>
+vec4<T>&& vec4<T>::operator -() && {
+	x = -x;
+	y = -y;
+	z = -z;
+	w = -w;
+
+	return std::move(*this);
+}
+
+template<typename T>
 vec4<T>&& vec4<T>::operator -(const vec4& v) const & {
 	return std::move(vec4(x - v.x, y - v.y, z - v.z, w - v.w));
 }

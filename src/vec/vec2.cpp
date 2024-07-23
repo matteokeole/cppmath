@@ -47,6 +47,19 @@ vec2<T>& vec2<T>::operator +=(const vec2& v) {
 }
 
 template<typename T>
+vec2<T>&& vec2<T>::operator -() const & {
+	return std::move(vec2(-x, -y));
+}
+
+template<typename T>
+vec2<T>&& vec2<T>::operator -() && {
+	x = -x;
+	y = -y;
+
+	return std::move(*this);
+}
+
+template<typename T>
 vec2<T>&& vec2<T>::operator -(const vec2& v) const & {
 	return std::move(vec2(x - v.x, y - v.y));
 }

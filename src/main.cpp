@@ -83,12 +83,9 @@ static void testVec2Sum() {
 
 static void testVec2Negate() {
 	vec2<float> a(1, 2);
+	vec2<float> n(-a);
 
-	print("a", a);
-
-	//a = -a;
-
-	print("-a", a);
+	print("-a", n);
 }
 
 static void testVec2Normalize() {
@@ -108,6 +105,13 @@ static void testVec2Dot() {
 	float dot = a.dot(b);
 
 	assert((dot == 8) && "The result of a.dot(b) is invalid");
+}
+
+static void testVec3Negate() {
+	vec3<float> a(1, 2, 3);
+	vec3<float> n(-a);
+
+	print("-a", n);
 }
 
 static void testVec3Cross() {
@@ -146,6 +150,13 @@ static void testVec3Dot() {
 	assert((dot == 26) && "The result of a.dot(b) is invalid");
 }
 
+static void testVec4Negate() {
+	vec4<float> a(1, 2, 3, 4);
+	vec4<float> n(-a);
+
+	print("-a", n);
+}
+
 static void testVec4Normalize() {
 	vec4<float> a(1, 1, 1, 1);
 	vec4<float> n(a);
@@ -165,18 +176,6 @@ static void testVec4Dot() {
 	assert((dot == 60) && "The result of a.dot(b) is invalid");
 }
 
-static void testMat3x3() {
-	mat3x3<float> mat;
-
-	std::cout << mat << std::endl;
-}
-
-static void testMat4x4() {
-	mat4x4<float> mat;
-
-	std::cout << mat << std::endl;
-}
-
 int main() {
 	// vec2 tests
 	//testVec2Sum();
@@ -185,12 +184,14 @@ int main() {
 	//testVec2Dot();
 
 	// vec3 tests
+	//testVec3Negate();
 	//testVec3Cross();
 	//testVec3TripleCross();
 	//testVec3Normalize();
 	//testVec3Dot();
 
 	// vec4 tests
+	//testVec4Negate();
 	//testVec4Normalize();
 	//testVec4Dot();
 

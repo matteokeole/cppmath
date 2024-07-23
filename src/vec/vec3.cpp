@@ -50,6 +50,20 @@ vec3<T>& vec3<T>::operator +=(const vec3& v) {
 }
 
 template<typename T>
+vec3<T>&& vec3<T>::operator -() const & {
+	return std::move(vec3(-x, -y, -z));
+}
+
+template<typename T>
+vec3<T>&& vec3<T>::operator -() && {
+	x = -x;
+	y = -y;
+	z = -z;
+
+	return std::move(*this);
+}
+
+template<typename T>
 vec3<T>&& vec3<T>::operator -(const vec3& v) const & {
 	return std::move(vec3(x - v.x, y - v.y, z - v.z));
 }

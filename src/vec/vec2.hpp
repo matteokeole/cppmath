@@ -20,6 +20,10 @@ struct vec2 {
 
 	vec2& operator +=(const vec2&);
 
+	vec2&& operator -() const &;
+
+	vec2&& operator -() &&;
+
 	vec2&& operator -(const vec2&) const &;
 
 	vec2&& operator -(const vec2&) &&;
