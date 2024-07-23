@@ -149,7 +149,7 @@ bool vec4<T>::operator ==(const vec4& v) const {
 
 template<typename T>
 vec4<T>& vec4<T>::normalize() {
-	T l = length();
+	const T l = length();
 
 	if (l == 0) {
 		return *this;

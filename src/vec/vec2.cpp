@@ -48,6 +48,7 @@ vec2<T>& vec2<T>::operator +=(const vec2& v) {
 
 template<typename T>
 vec2<T>&& vec2<T>::operator -() const & {
+	//return _mm_ssqrt
 	return std::move(vec2(-x, -y));
 }
 
@@ -129,7 +130,7 @@ bool vec2<T>::operator ==(const vec2& v) const {
 
 template<typename T>
 vec2<T>& vec2<T>::normalize() {
-	T l = length();
+	const T l = length();
 
 	if (l == 0) {
 		return *this;

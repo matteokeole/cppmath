@@ -148,9 +148,9 @@ vec3<T>&& vec3<T>::cross(const vec3& v) const & {
 
 template<typename T>
 vec3<T>&& vec3<T>::cross(const vec3& v) && {
-	T _x = y * v.z - z * v.y;
-	T _y = z * v.x - x * v.z;
-	T _z = x * v.y - y * v.x;
+	const T _x = y * v.z - z * v.y;
+	const T _y = z * v.x - x * v.z;
+	const T _z = x * v.y - y * v.x;
 
 	x = _x;
 	y = _y;
@@ -161,7 +161,7 @@ vec3<T>&& vec3<T>::cross(const vec3& v) && {
 
 template<typename T>
 vec3<T>& vec3<T>::normalize() {
-	T l = length();
+	const T l = length();
 
 	if (l == 0) {
 		return *this;

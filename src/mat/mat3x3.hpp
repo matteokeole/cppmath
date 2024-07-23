@@ -1,5 +1,6 @@
 #pragma once
 
+#include <immintrin.h>
 #include <iostream>
 
 template<typename T>
