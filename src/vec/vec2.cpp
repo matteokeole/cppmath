@@ -2,7 +2,7 @@
 
 template<typename T>
 vec2<T>::vec2(T x, T y) : x(x), y(y) {
-	std::cout << "Def: " << (*this) << std::endl;
+	std::cout << "Default: " << (*this) << std::endl;
 }
 
 template<typename T>

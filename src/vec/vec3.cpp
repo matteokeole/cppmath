@@ -2,7 +2,7 @@
 
 template<typename T>
 vec3<T>::vec3(T x, T y, T z) : x(x), y(y), z(z) {
-	std::cout << "Def: " << (*this) << std::endl;
+	std::cout << "Default: " << (*this) << std::endl;
 }
 
 template<typename T>
