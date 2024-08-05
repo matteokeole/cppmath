@@ -48,7 +48,6 @@ vec2<T>& vec2<T>::operator +=(const vec2& v) {
 
 template<typename T>
 vec2<T>&& vec2<T>::operator -() const & {
-	//return _mm_ssqrt
 	return std::move(vec2(-x, -y));
 }
 
@@ -156,3 +155,5 @@ template<typename T>
 inline std::ostream& operator <<(std::ostream& stream, const vec2<T>& vector) {
 	return stream << "(" << vector.x << ", " << vector.y << ")";
 }
+
+template class vec2<float>;

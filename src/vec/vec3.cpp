@@ -188,3 +188,5 @@ template<typename T>
 inline std::ostream& operator <<(std::ostream& stream, const vec3<T>& vector) {
 	return stream << "(" << vector.x << ", " << vector.y << ", " << vector.z << ")";
 }
+
+template class vec3<float>;

@@ -16,3 +16,5 @@ inline std::ostream& operator <<(std::ostream& stream, mat4x4<T>& mat) {
 		<< mat[8] << " " << mat[9] << " " << mat[10] << " " << mat[11] << "\n"
 		<< mat[12] << " " << mat[13] << " " << mat[14] << " " << mat[15];
 }
+
+template class mat4x4<float>;
