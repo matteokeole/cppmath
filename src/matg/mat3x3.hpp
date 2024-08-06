@@ -1,11 +1,11 @@
 #pragma once
 
-#include <immintrin.h>
+// #include <immintrin.h>
 #include <iostream>
 
 template<typename T>
 struct mat3x3 {
-	protected:
+	private:
 		T entries[9];
 
 	public:
@@ -31,4 +31,4 @@ struct mat3x3 {
 };
 
 template<typename T>
-inline std::ostream& operator <<(std::ostream&, mat3x3<T>&);
+inline std::ostream& operator <<(std::ostream&, const mat3x3<T>&);

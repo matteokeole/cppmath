@@ -1,9 +1,10 @@
 #include <cassert>
-#include "mat/mat3x3.hpp"
-#include "mat/mat4x4.hpp"
-#include "vec/vec2.hpp"
-#include "vec/vec3.hpp"
-#include "vec/vec4.hpp"
+#include <iostream>
+#include "vec/vec2.test.hpp"
+
+/*#include <cassert>
+#include "mat/mat4x4.test.hpp"
+//#include "vec/vec2.test.hpp"
 
 template<typename T>
 static void print(const std::string& name, const vec2<T>& vector) {
@@ -174,7 +175,7 @@ static void testVec4Dot() {
 	float dot = a.dot(b);
 
 	assert((dot == 60) && "The result of a.dot(b) is invalid");
-}
+}*/
 
 int main() {
 	// vec2 tests
@@ -182,6 +183,9 @@ int main() {
 	//testVec2Negate();
 	//testVec2Normalize();
 	//testVec2Dot();
+	TestVec2::defaultConstructor();
+	TestVec2::copyConstructor();
+	TestVec2::moveConstructor();
 
 	// vec3 tests
 	//testVec3Negate();
@@ -198,6 +202,12 @@ int main() {
 	// mat3x3 tests
 
 	// mat4x4 tests
+	//mat4x4_test::defaultConstructor();
+	//mat4x4_test::copyConstructor();
+	//mat4x4_test::moveConstructor();
+	//mat4x4_test::braceOperator();
+	//mat4x4_test::transposeConstruct();
+	//mat4x4_test::transpose();
 
 	std::cin.get();
 }

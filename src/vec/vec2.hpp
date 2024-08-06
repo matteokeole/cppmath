@@ -1,56 +1,22 @@
 #pragma once
 
-#include <immintrin.h>
-#include <iostream>
-
 template<typename T>
-struct vec2 {
-	T x, y;
+class vec2 {
+	private:
+		T entries[2];
 
-	vec2(T, T);
+	public:
+		vec2(T, T);
+		vec2(const vec2&);
+		vec2(const vec2&&) noexcept;
 
-	vec2(const vec2&);
+		T& operator [](unsigned int);
 
-	vec2(const vec2&&);
+		vec2&& operator -() const &;
+		vec2&& operator -(const vec2&) const &;
+		vec2&& operator -(const vec2&) &&;
 
-	vec2& operator =(const vec2&);
+		T length() const;
 
-	vec2&& operator +(const vec2&) const &;
-
-	vec2&& operator +(const vec2&) &&;
-
-	vec2& operator +=(const vec2&);
-
-	vec2&& operator -() const &;
-
-	vec2&& operator -() &&;
-
-	vec2&& operator -(const vec2&) const &;
-
-	vec2&& operator -(const vec2&) &&;
-
-	vec2& operator -=(const vec2&);
-
-	vec2&& operator *(const vec2&) const &;
-
-	vec2&& operator *(const vec2&) &&;
-
-	vec2& operator *=(const vec2&);
-
-	vec2&& operator /(const vec2&) const &;
-
-	vec2&& operator /(const vec2&) &&;
-
-	vec2& operator /=(const vec2&);
-
-	bool operator ==(const vec2&) const;
-
-	vec2& normalize();
-
-	T dot(const vec2&) const;
-
-	T length() const;
+		T dot(const vec2&) const;
 };
-
-template<typename T>
-inline std::ostream& operator <<(std::ostream&, const vec2<T>&);
