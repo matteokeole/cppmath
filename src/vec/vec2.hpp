@@ -10,13 +10,36 @@ class vec2 {
 		vec2(const vec2&);
 		vec2(const vec2&&) noexcept;
 
+		const T operator [](unsigned int) const;
 		T& operator [](unsigned int);
 
-		vec2&& operator -() const &;
-		vec2&& operator -(const vec2&) const &;
-		vec2&& operator -(const vec2&) &&;
+		T dot(const vec2&) const;
 
 		T length() const;
 
-		T dot(const vec2&) const;
+		vec2& operator =(const vec2&);
+
+		vec2&& operator +(const vec2&) const &;
+		vec2&& operator +(const vec2&) &&;
+
+		vec2& operator +=(const vec2&);
+
+		vec2&& operator -() const &;
+		vec2&& operator -() &&;
+		vec2&& operator -(const vec2&) const &;
+		vec2&& operator -(const vec2&) &&;
+
+		vec2& operator -=(const vec2&);
+
+		vec2&& operator *(const vec2&) const &;
+		vec2&& operator *(const vec2&) &&;
+
+		vec2& operator *=(const vec2&);
+
+		vec2&& operator /(const vec2&) const &;
+		vec2&& operator /(const vec2&) &&;
+
+		vec2& operator /=(const vec2&);
+
+		vec2& normalize();
 };

@@ -2,113 +2,7 @@
 #include <iostream>
 #include "vec/vec2.test.hpp"
 
-/*#include <cassert>
-#include "mat/mat4x4.test.hpp"
-//#include "vec/vec2.test.hpp"
-
-template<typename T>
-static void print(const std::string& name, const vec2<T>& vector) {
-	std::cout << name << " = " << vector << std::endl;
-}
-
-template<typename T>
-static void print(const std::string& name, const vec3<T>& vector) {
-	std::cout << name << " = " << vector << std::endl;
-}
-
-template<typename T>
-static void print(const std::string& name, const vec4<T>& vector) {
-	std::cout << name << " = " << vector << std::endl;
-}
-
-static void test1() {
-	// (OK) Default constructor
-	vec2<float> v1(1, 2);
-
-	// (OK) Copy constructor
-	vec2<float> v2 = v1;
-	// OR
-	//vec2<float> v2(v1);
-
-	// (OK) Addition
-	//v1 + v2;
-
-	// (OK) Addition, then assignment
-	// This calls the constructor once per addition!
-	//vec2<float> v3(v1 + v2);
-	// OR
-	//vec2<float> v3 = v1 + v2;
-
-	// (OK) Addition assignment
-	// This does not call the constructor
-	//v1 += v2;
-
-	// (OK) Addition assignment, then assignment
-	// This calls the constructor once
-	vec2<float> v3 = v1 += v2;
-	// OR
-	//vec2<float> v3(v1 += v2);
-
-	print("v1", v1);
-	print("v2", v2);
-	print("v3", v3);
-}
-
-static void testAdd() {
-	vec2<float> v1(1, 1);
-	vec2<float> v2(2, 2);
-	vec2<float> v3(3, 3);
-	vec2<float> v4(4, 4);
-	vec2<float> v5(0, 0);
-
-	v5 = v1 + v4;
-
-	print("v5", v5);
-
-	v5 = v1 + v2 + v3 + v4;
-
-	print("v5", v5);
-}
-
-static void testVec2Sum() {
-	vec2<float> a(1, 2);
-	vec2<float> b(3, 4);
-	vec2<float> c(0, 0);
-
-	print("c", c);
-
-	c = a + b;
-
-	print("c", c);
-}
-
-static void testVec2Negate() {
-	vec2<float> a(1, 2);
-	vec2<float> n(-a);
-
-	print("-a", n);
-}
-
-static void testVec2Normalize() {
-	vec2<float> a(1, 1);
-	vec2<float> n(a);
-
-	n.normalize();
-
-	print("a", a);
-	print("n", n);
-}
-
-static void testVec2Dot() {
-	vec2<float> a(1, 2);
-	vec2<float> b(2, 3);
-
-	float dot = a.dot(b);
-
-	assert((dot == 8) && "The result of a.dot(b) is invalid");
-}
-
-static void testVec3Negate() {
+/*static void testVec3Negate() {
 	vec3<float> a(1, 2, 3);
 	vec3<float> n(-a);
 
@@ -178,14 +72,27 @@ static void testVec4Dot() {
 }*/
 
 int main() {
-	// vec2 tests
-	//testVec2Sum();
-	//testVec2Negate();
-	//testVec2Normalize();
-	//testVec2Dot();
 	TestVec2::defaultConstructor();
 	TestVec2::copyConstructor();
 	TestVec2::moveConstructor();
+	TestVec2::squareBracketOperator();
+	TestVec2::dot();
+	TestVec2::length();
+	TestVec2::equalOperator();
+	TestVec2::addOperatorRef();
+	TestVec2::addOperatorRvalueRef();
+	TestVec2::addEqualOperator();
+	TestVec2::negateOperatorRef();
+	TestVec2::negateOperatorRvalueRef();
+	TestVec2::subtractOperatorRef();
+	TestVec2::subtractOperatorRvalueRef();
+	TestVec2::subtractEqualOperator();
+	TestVec2::multiplyOperatorRef();
+	TestVec2::multiplyOperatorRvalueRef();
+	TestVec2::multiplyEqualOperator();
+	TestVec2::divideOperatorRef();
+	TestVec2::divideOperatorRvalueRef();
+	TestVec2::normalize();
 
 	// vec3 tests
 	//testVec3Negate();
